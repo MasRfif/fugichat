@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const LiveStudioFugi = () => {
   const [isTalking, setIsTalking] = useState(false);
@@ -42,7 +43,7 @@ const LiveStudioFugi = () => {
 
   return (
     <div>
-      <img
+      <Image
         src={isTalking ? "/talking.png" : "/idle.png"}
         alt="Fugi"
         style={{
