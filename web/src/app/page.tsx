@@ -4,7 +4,6 @@ import Image from "next/image";
 
 const LiveStudioFugi = () => {
   const [isTalking, setIsTalking] = useState(false);
-  const [talkDuration, setTalkDuration] = useState(3000); // Default 3s
 
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:62024");
@@ -18,11 +17,10 @@ const LiveStudioFugi = () => {
 
         if (eventType === "chat" && data?.comment) {
           // Calculate duration based on text length (100ms per character)
-          let duration = Math.min(
+          const duration = Math.min(
             Math.max(data.comment.length * 100, 2000),
             7000
           ); // Between 2s - 7s
-          setTalkDuration(duration);
 
           // Show talking image
           setIsTalking(true);
@@ -46,9 +44,9 @@ const LiveStudioFugi = () => {
       <Image
         src={isTalking ? "/talking.png" : "/idle.png"}
         alt="Fugi"
+        width={400}
+        height={400}
         style={{
-          width: "400px", // Adjust as needed for Live Studio
-          height: "400px",
           opacity: isTalking ? 1 : 0.2, // Instant switch
         }}
       />
