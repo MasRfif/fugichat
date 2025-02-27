@@ -50,7 +50,7 @@ const LiveStudioFugi = () => {
         width={400}
         height={400}
         style={{
-          opacity: isTalking ? 1 : 0.2, // Instant switch
+          filter: isTalking ? "brightness(1)" : "brightness(0.4)",
         }}
       />
     </div>
