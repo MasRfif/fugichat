@@ -42,7 +42,11 @@ const LiveStudioFugi = () => {
   return (
     <div>
       <Image
-        src={isTalking ? "/talking.png" : "/idle.png"}
+        src={
+          isTalking
+            ? "https://i.imgur.com/ZV8eBNa.png"
+            : "https://i.imgur.com/ZV8eBNa.png"
+        }
         alt="Fugi"
         width={400}
         height={400}
