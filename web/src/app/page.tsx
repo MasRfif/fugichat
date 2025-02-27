@@ -15,16 +15,13 @@ const LiveStudioFugi = () => {
         console.log(`Parsed Event: ${eventType}`, data);
 
         if (eventType === "chat" && data?.comment) {
-          // Calculate duration based on text length (100ms per character)
           const duration = Math.min(
             Math.max(data.comment.length * 100, 2000),
             7000
-          ); // Between 2s - 7s
+          );
 
-          // Show talking image
           setIsTalking(true);
 
-          // Switch back to idle after the calculated duration
           setTimeout(() => setIsTalking(false), duration);
         }
       } catch (error) {
