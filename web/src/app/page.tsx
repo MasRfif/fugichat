@@ -41,6 +41,7 @@ const LiveStudioFugi = () => {
   return (
     <div>
       <img
+        className="bg-white"
         src={
           isTalking
             ? "https://i.imgur.com/ZV8eBNa.png"
